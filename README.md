@@ -2,13 +2,13 @@
 # gmxstrain
 
 gmxstrain is a script for the calculation of finite temperature elastic constants of molecular crystals,
-using stress/strain data from MD simulations in the NPT ensemble. The scripts generates input files
+using stress/strain data from MD simulations in the NPT ensemble. The script generates input files
 (strained simulation cells), executes (as external process) MD simulations with Gromacs, and analyzes
 the resulting stress tensors. All time consuming parts of the calculations are performed by Gromacs, which
 arguably is one of the fastest MD simulation engines out there, while the rest is book-keeping, and therefore
 can be executed in a simple AWK script, as done here. The script is based loosely on a similar script that is part
 of [LAMMPS](https://www.sciencedirect.com/science/article/pii/S0010465521002836) (more
-details [here](https://github.com/lammps/lammps/tree/develop/examples/ELASTIC), while the accessory script
+details [here](https://github.com/lammps/lammps/tree/develop/examples/ELASTIC)), while the accessory script
 anisotropy.awk, that calculates moduli and anisotropy, is based on a matlab script
 [published by Christopher Kube](https://aip.scitation.org/doi/10.1063/1.4962996)
 
