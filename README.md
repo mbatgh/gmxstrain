@@ -14,10 +14,9 @@ anisotropy.awk, that calculates moduli and anisotropy, is based on a matlab scri
 
 ## Features
 
-- Based on the crystal structure and a classical molecular force field gmxstrain calculates
-the full elastic tensor for a given crystalline material
+- Based on the crystal structure and a classical molecular force field gmxstrain calculates the full elastic tensor for a given crystalline material
 - Any force field that is supported by gromacs can be used.
-- Based on the elastic tensor, bulk modulus, shear modulus, and the elastic anisotropy are calculated.
+- Based on the elastic tensor, bulk modulus, shear modulus, and the elastic anisotropy can be calculated.
 - Since the stress tensors are determined in MD simulations, finite temperature effects are included.
 - In our experience (see the paper referenced below) the accuracy of this approach for molecular crystals,
 rivals that of DFT based calculations, at a fraction of the computational effort.
@@ -25,10 +24,18 @@ rivals that of DFT based calculations, at a fraction of the computational effort
 ## Prerequisites
 
 gmxstrain is a simple AWK script that should run on most Linux distributions, without
-compilation, out of the box. For the MD simulations you need a reasonably recent
-version of Gromacs, with the binaries in your PATH.
+compilation, and out of the box. For the MD simulations you need a reasonably recent
+version of Gromacs, with its binaries in your PATH.
 
 - [Gromacs](http://www.gromacs.org/)
+
+Other external tools that are not strictly required, but helpful, include:
+
+- [Chimera](https://www.cgl.ucsf.edu/chimera/)
+- [openbabel](http://openbabel.org/)
+- [acpype](https://github.com/alanwilter/acpype)
+- [Ambertools](http://ambermd.org/AmberTools.php)
+- [gdis](https://github.com/arohl/gdis)
 
 ## Installation
 
@@ -63,7 +70,7 @@ For more details see the documented [workflow](examples/README.md) in the exampl
 
 ## Limitations
 
-- The MD simulations in the NPT ensemble use the Berendsen barostate, which does not produce
+- The constant pressure MD simulations use the Berendsen barostate, which does not produce
 a (thermodynamically) correct NPT ensemble. One could use the Parrinello-Raman barostate which
 is also implemented in Gromacs, but this can lead to large fluctuations of the volume, and numerical
 instabilities. In our experience using Berendsen is a minor issue, and the resulting errors are
