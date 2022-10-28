@@ -2,7 +2,7 @@
 # gmxstrain
 
 gmxstrain is a script for the calculation of finite temperature elastic constants of molecular crystals,
-using stress/strain data from MD simulations in the NPT ensemble. The script generates input files
+using stress/strain data from MD simulations. The script generates input files
 (strained simulation cells), executes (as external process) MD simulations with Gromacs, and analyzes
 the resulting stress tensors. All time consuming parts of the calculations are performed by Gromacs, which
 arguably is one of the fastest MD simulation engines out there, while the rest is book-keeping, and therefore
